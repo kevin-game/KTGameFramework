@@ -1,4 +1,5 @@
 using System;
+using KT;
 using VContainer;
 using VContainer.Unity;
 
@@ -11,6 +12,10 @@ namespace KT
         
         protected override void Configure(IContainerBuilder builder)
         {
+            builder.Register<ILogService, LogService>(Lifetime.Singleton);
+            builder.Register<IConfigService, ConfigService>(Lifetime.Singleton);
+            builder.Register<ISaveService, SaveService>(Lifetime.Singleton);
+            
             _builderFunc?.Invoke(builder);
         }
     
