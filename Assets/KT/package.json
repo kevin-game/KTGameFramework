@@ -3,7 +3,7 @@
   "displayName": "KT Game Framework",
   "version": "1.0.0",
   "description": "A game framework based on VContainer for Unity, inspired by ASP.NET design patterns.",
-  "unity": "2021.3",
+  "unity": "2022.3",
   "keywords": ["game framework", "vcontainer", "unity", "asp.net"],
   "dependencies": {
     "jp.hadashikick.vcontainer": "1.16.8",
