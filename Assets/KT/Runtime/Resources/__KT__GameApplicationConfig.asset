@@ -12,3 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b858487206f425fbb3e78a9b83fe740, type: 3}
   m_Name: __KT__GameApplicationConfig
   m_EditorClassIdentifier: 
+  playMode: 2
+  dbFileName: default.db
+  cdnDefaultHost: http://127.0.0.1:8080
+  cdnFallbackHost: http://127.0.0.1:8080
+  cdnRootDir: CDN
+  cdnAndroidDir: Android
+  cdnIPhoneDir: IPhone
+  cdnWebGLDir: WebGL
+  cdnPCDir: PC
