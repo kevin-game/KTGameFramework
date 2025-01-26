@@ -15,10 +15,10 @@ namespace KT
         {
             builder.RegisterMessagePipe();
             
-
             builder.Register<ILogService, LogService>(Lifetime.Singleton);
             builder.Register<IConfigService, ConfigService>(Lifetime.Singleton);
             builder.Register<ISaveService, SaveService>(Lifetime.Singleton);
+            builder.Register<IAssetService, AssetService>(Lifetime.Singleton);
             
             _builderFunc?.Invoke(builder);
         }

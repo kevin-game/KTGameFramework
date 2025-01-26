@@ -1,7 +1,3 @@
-using System.Collections.Generic;
-using UnityEditor;
-using UnityEngine;
-
 namespace KT
 {
     public class ConfigService : IConfigService
@@ -11,12 +7,11 @@ namespace KT
         public ConfigService()
         {
             LoadGameApplicationConfig();
-            Debug.Log(GameApplicationConfig.PlayMode.ToString());
         }
 
         private void LoadGameApplicationConfig()
         {
-            GameApplicationConfig = Resources.Load<GameApplicationConfig>("GameApplicationConfig");
+            GameApplicationConfig = UnityEngine.Resources.Load<GameApplicationConfig>("__KT__GameApplicationConfig");
         }
     }
 }

@@ -49,7 +49,7 @@ namespace KT
         /// <returns></returns>
         public ILiteDatabase GetDatabase()
         {
-            return new LiteDatabase(_configService.GameApplicationConfig.DbFileName);
+            return new LiteDatabase(_configService.GameApplicationConfig.dbFileName);
         }
     }
 }
