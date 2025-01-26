@@ -14,6 +14,7 @@ namespace KT
         protected override void Configure(IContainerBuilder builder)
         {
             builder.RegisterMessagePipe();
+            
 
             builder.Register<ILogService, LogService>(Lifetime.Singleton);
             builder.Register<IConfigService, ConfigService>(Lifetime.Singleton);
