@@ -62,7 +62,7 @@ namespace KT
             {
                 var createParameters = new OfflinePlayModeParameters();
                 createParameters.BuildinFileSystemParameters =
-                    FileSystemParameters.CreateDefaultBuildinFileSystemParameters();
+                    FileSystemParameters.CreateDefaultBuildinFileSystemParameters(packageRoot:System.IO.Path.Combine(Application.streamingAssetsPath, _configService.GameApplicationConfig.cdnRootDir, packageName));
                 initializationOperation = package.InitializeAsync(createParameters);
             }
 
@@ -73,7 +73,9 @@ namespace KT
                 IRemoteServices remoteServices = new RemoteCdn(_configService);
                 var createParameters = new HostPlayModeParameters
                 {
-                    BuildinFileSystemParameters = FileSystemParameters.CreateDefaultBuildinFileSystemParameters(),
+                    // 如果有首包文件可以进行设置
+                    // BuildinFileSystemParameters = FileSystemParameters.CreateDefaultBuildinFileSystemParameters(packageRoot:System.IO.Path.Combine(Application.streamingAssetsPath, _configService.GameApplicationConfig.cdnRootDir, packageName)), 
+                    BuildinFileSystemParameters = null,
                     CacheFileSystemParameters = FileSystemParameters.CreateDefaultCacheFileSystemParameters(remoteServices)
                 };
                 initializationOperation = package.InitializeAsync(createParameters);

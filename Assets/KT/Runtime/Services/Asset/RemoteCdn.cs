@@ -42,25 +42,27 @@ namespace KT
         private string GetHostServerURL(string server)
         {
             var config = _configService.GameApplicationConfig;
+            string host = null;
 #if UNITY_EDITOR
             if (UnityEditor.EditorUserBuildSettings.activeBuildTarget == UnityEditor.BuildTarget.Android)
-                return System.IO.Path.Combine(server, config.cdnAndroidDir);
+                host = System.IO.Path.Combine(server, config.cdnRootDir, config.cdnAndroidDir);
             else if (UnityEditor.EditorUserBuildSettings.activeBuildTarget == UnityEditor.BuildTarget.iOS)
-                return System.IO.Path.Combine(server, config.cdnIPhoneDir);
+                host = System.IO.Path.Combine(server, config.cdnRootDir, config.cdnIPhoneDir);
             else if (UnityEditor.EditorUserBuildSettings.activeBuildTarget == UnityEditor.BuildTarget.WebGL)
-                return System.IO.Path.Combine(server, config.cdnWebGLDir);
+                host = System.IO.Path.Combine(server, config.cdnRootDir, config.cdnWebGLDir);
             else
-                return System.IO.Path.Combine(server, config.cdnPCDir);
+                host = System.IO.Path.Combine(server, config.cdnRootDir, config.cdnPCDir);
 #else
-            if (Application.platform == RuntimePlatform.Android)
-                return System.IO.Path.Combine(server, config.cdnAndroidDir);
-            else if (Application.platform == RuntimePlatform.IPhonePlayer)
-                return System.IO.Path.Combine(server, config.cdnIPhoneDir);
-            else if (Application.platform == RuntimePlatform.WebGLPlayer)
-                return System.IO.Path.Combine(server, config.cdnWebGLDir);
+            if (UnityEngine.Application.platform == UnityEngine.RuntimePlatform.Android)
+                host = System.IO.Path.Combine(server, config.cdnRootDir, config.cdnAndroidDir);
+            else if (UnityEngine.Application.platform == UnityEngine.RuntimePlatform.IPhonePlayer)
+                host = System.IO.Path.Combine(server, config.cdnRootDir, config.cdnIPhoneDir);
+            else if (UnityEngine.Application.platform == UnityEngine.RuntimePlatform.WebGLPlayer)
+                host = System.IO.Path.Combine(server, config.cdnRootDir, config.cdnWebGLDir);
             else
-                return System.IO.Path.Combine(server, config.cdnPCDir);
+                host = System.IO.Path.Combine(server, config.cdnRootDir, config.cdnPCDir);
 #endif
+            return host.Replace('\\', '/');
         }
     }
 }
