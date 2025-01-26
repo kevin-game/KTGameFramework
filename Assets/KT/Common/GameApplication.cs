@@ -1,5 +1,6 @@
 using System;
 using KT;
+using MessagePipe;
 using VContainer;
 using VContainer.Unity;
 
@@ -12,6 +13,8 @@ namespace KT
         
         protected override void Configure(IContainerBuilder builder)
         {
+            builder.RegisterMessagePipe();
+
             builder.Register<ILogService, LogService>(Lifetime.Singleton);
             builder.Register<IConfigService, ConfigService>(Lifetime.Singleton);
             builder.Register<ISaveService, SaveService>(Lifetime.Singleton);
