@@ -1,5 +1,7 @@
 {
   "dependencies": {
+    "com.oss.leantween": "2.50.4",
+    "com.code-philosophy.hybridclr": "7.4.1",
     "com.cysharp.messagepipe": "1.8.1",
     "com.cysharp.messagepipe.vcontainer": "1.8.1",
     "com.cysharp.unitask": "2.5.10",
@@ -54,9 +56,11 @@
       "name": "package.openupm.com",
       "url": "https://package.openupm.com",
       "scopes": [
+        "com.code-philosophy.hybridclr",
         "com.cysharp.messagepipe",
         "com.cysharp.messagepipe.vcontainer",
         "com.cysharp.unitask",
+        "com.oss.leantween",
         "com.tuyoogame.yooasset",
         "jp.hadashikick.vcontainer",
         "org.nuget.litedb",

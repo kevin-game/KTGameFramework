@@ -1,5 +1,12 @@
 {
   "dependencies": {
+    "com.code-philosophy.hybridclr": {
+      "version": "7.4.1",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://package.openupm.com"
+    },
     "com.cysharp.messagepipe": {
       "version": "1.8.1",
       "depth": 0,
@@ -16,6 +23,13 @@
     },
     "com.cysharp.unitask": {
       "version": "2.5.10",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://package.openupm.com"
+    },
+    "com.oss.leantween": {
+      "version": "2.50.4",
       "depth": 0,
       "source": "registry",
       "dependencies": {},
