@@ -74,3 +74,8 @@ crashlytics-build.properties
 .vscode
 .idea
 ProjectSettings
+Bundles
+HybridCLRData
+bin
+Assets/StreamingAssets
+yoo
